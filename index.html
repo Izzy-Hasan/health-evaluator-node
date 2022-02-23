@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- 
+      Sprint 4
+      Teamm WubALubADubDubs
+      Izzy, Katie, Mike, Shane
+      Health Risk Calculator 
+      In Node.js
+  -->
+
+<!-- Styles taken from w3schools -->
+<style>
+    p {
+  font-size: 12px;
+  
+}
+
+label {
+  font-size: 22px;
+}
+</style>
+<head>
+<title>health Risk Calculator</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+<!-- Picture with text -->
+<header class="w3-display-container w3-content w3-center" style="max-width:1500px">
+  <img class="w3-image" src="https://i.ibb.co/g3BRt1h/i-Stock-1203599963.jpg"   alt="Me" width="1500" height="600">
+  <div class="w3-display-middle w3-padding-large w3-border w3-wide w3-text-light-gray w3-center">
+    <h1 class="w3-hide-medium w3-hide-small w3-xxxlarge">Health Risk</h1>
+    <h5 class="w3-hide-large" style="white-space:nowrap">Health Risk</h5>
+    <h3 class="w3-hide-medium w3-hide-small w3-text-light-gray">Calculator</h3>
+  </div>
+  
+  
+  <div class="w3-bar w3-light-grey w3-round w3-display-bottommiddle w3-hide-small" style="bottom:-16px">
+    <!-- link back to portfolio-->
+    <a href="https://zealous-river-0ee524e10.1.azurestaticapps.net/" class="w3-bar-item w3-button">Portfolio</a>
+    
+  </div>
+</header>
+
+
+
+
+<!-- Portfolio-->
+<div class="w3-content w3-padding-large w3-margin-top" id="portfolio">
+
+
+<!-- Input box from W3 Schools tutorial-->
+  <!--This is where the information will be put in-->
+  <div class="w3-light-grey w3-padding-large w3-padding-32 w3-margin-top" id="contact">
+    <h3 class="w3-center">Health Risk Calculator</h3>
+    <hr>
+    <p>This program helps you classify health insurance
+        based on their risk level. That is determined
+        by their health. Their health is judged in terms
+        of their body-mass index, blood pressure, age,
+        and family history of disease. Please enter your 
+        information in the boxes below. Then hit calculate 
+        to get your insurance risk.</p>
+
+    <form action="/action_page.php" target="_blank">
+      <div class="w3-section">
+        <label>Age</label>
+        <p> Enter your age in years</p>
+        <input class="w3-input w3-border" type="text" required name="Name">
+      </div>
+      <div class="w3-section">
+        <label>Height</label>
+        <p> Enter height in total inches </p>
+        <input class="w3-input w3-border" type="text" required name="Email">
+      </div>
+      <label>Weight</label>
+      <p> Enter weight in total pounds </p>
+      <input class="w3-input w3-border" type="text" required name="Email">
+    
+      <div class="w3-section">
+        <label>Blood Pressure</label>
+        <p> Enter normal, elevated, stage 1, stage 2, or crisis </p>
+        <input class="w3-input w3-border" required name="Message">
+      </div>
+      <div class="w3-section">
+        <label>Family Diease</label>
+        <p> Enter diabetes, cancer or Alzhiemers </p>
+    
+        <input class="w3-input w3-border" required name="Message">
+      </div>
+      <button type="submit" class="w3-button w3-block w3-dark-grey">Calculate</button>
+    </form><br>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+
+  </div>
+
+</div>
+
+</body>
+</html>
