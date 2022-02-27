@@ -64,33 +64,34 @@ label {
         information in the boxes below. Then hit calculate 
         to get your insurance risk.</p>
 
-        <form action="/add" method="POST" target="_blank">
-          <fieldset>
+     <form method='GET' action="/getall">
+          
       <div class="w3-section">
         <label>Age</label>
         <p> Enter your age in years</p>
-        <input class="w3-input w3-border" type="text" required name="Message1">
+        <input class="w3-input w3-border" type="text" id="Message1">
       </div>
-      <div class="w3-section">
+     <div class="w3-section">
         <label>Height</label>
         <p> Enter height in total inches </p>
-        <input class="w3-input w3-border" type="text" required name="Message2">
+        <input class="w3-input w3-border" type="text" id="Message2">
       </div>
       <label>Weight</label>
       <p> Enter weight in total pounds </p>
-      <input class="w3-input w3-border" type="text" required name="Message3">
+      <input class="w3-input w3-border" type="text" id="Message3">
     
       <div class="w3-section">
         <label>Blood Pressure</label>
         <p> Enter normal, elevated, stage 1, stage 2, or crisis </p>
-        <input class="w3-input w3-border" required name="Message4">
+        <input class="w3-input w3-border" id="Message4">
       </div>
       <div class="w3-section">
         <label>Family Diease</label>
         <p> Enter diabetes, cancer or Alzhiemers </p>
     
-        <input class="w3-input w3-border" required name="Message">
+        <input class="w3-input w3-border" id="Message5">
       </div>
+  
       <button type="submit" class="w3-button w3-block w3-dark-grey">Calculate</button>
       <p>
 
@@ -100,7 +101,7 @@ label {
     <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
 
   </div>
-</fieldset>
+</form>
 </div>
 
 </body>
