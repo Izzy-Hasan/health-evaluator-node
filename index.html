@@ -69,27 +69,57 @@ label {
       <div class="w3-section">
         <label>Age</label>
         <p> Enter your age in years</p>
-        <input class="w3-input w3-border" type="text" id="Message1">
+        <select onchange="calculate()" id="age">
+          <option>1-29</option>
+          <option>30-44</option>
+          <option>45-60</option>
+          <option>else</option>
+        </select>
       </div>
      <div class="w3-section">
         <label>Height</label>
         <p> Enter height in total inches </p>
-        <input class="w3-input w3-border" type="text" id="Message2">
+        <select onchange="calculate()" id="height">
+          <option>4'7" and under</option>
+          <option>4'8"-5'2"</option>
+          <option>5'3"-5'9"</option>
+          <option>5'10"-6'0"</option>
+          <option>6'.1" and up</option>
+        </select>
       </div>
       <label>Weight</label>
       <p> Enter weight in total pounds </p>
-      <input class="w3-input w3-border" type="text" id="Message3">
+      <select onchange="calculate()" id="weight">
+        <option>0-75</option>
+        <option>75-100</option>
+        <option>100-125</option>
+        <option>125-150</option>
+        <option>150-175</option>
+        <option>175-200</option>
+        <option>200 and up</option>
+      </select>
     
       <div class="w3-section">
         <label>Blood Pressure</label>
         <p> Enter normal, elevated, stage 1, stage 2, or crisis </p>
-        <input class="w3-input w3-border" id="Message4">
+        <select onchange="calculate()" id="blood">
+          <option>normal</option>
+          <option>elevated</option>
+          <option>stage 1</option>
+          <option>stage 2</option>
+          <option>crisis</option>
+        </select>
       </div>
       <div class="w3-section">
         <label>Family Diease</label>
         <p> Enter diabetes, cancer or Alzhiemers </p>
     
-        <input class="w3-input w3-border" id="Message5">
+        <select onchange="calculate()" id="family">
+          <option>none</option>
+          <option>diabetes</option>
+          <option>cancer</option>
+          <option>Alzhiemers</option>
+        </select>
       </div>
   
       <button type="submit" class="w3-button w3-block w3-dark-grey">Calculate</button>
@@ -101,8 +131,25 @@ label {
     <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
 
   </div>
-</form>
+</form>s
 </div>
+<script>
 
+	async function calculate() {
+		const age = document.getElementById("age").value
+		const height = document.getElementById("hieght").value
+    const weight = document.getElementById("weight").value
+    const blood = document.getElementById("blood").value
+    const family = document.getElementById("family").value
+
+		// Note the URL (fetch) string will look something like '/add-two-integers?x=2&y=1' when it is sent.
+		const fetchString = "/add-two-integers?x="+x+"&y="+y
+		const response = await fetch(fetchString)
+		const responseText = await response.text()
+		document.getElementById("sum").value = responseText
+	}
+
+
+</script>
 </body>
 </html>
