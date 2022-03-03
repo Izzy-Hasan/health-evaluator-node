@@ -76,50 +76,50 @@ label {
         information in the boxes below. Then hit calculate 
         to get your insurance risk.</p>
 
-     <form method='GET' action="/getall">
+    
           
       <div class="w3-section">
         <label>Age</label>
         <p> Enter your age in years</p>
         <select onchange="calculate()" id="age">
-          <option>1-29</option>
-          <option>30-44</option>
-          <option>45-60</option>
-          <option>else</option>
+          <option value="0">1-29</option>
+          <option value="10">30-44</option>
+          <option value="20">45-60</option>s
+          <option value="30">else</option>
         </select>
       </div>
      <div class="w3-section">
         <label>Height</label>
         <p> Enter height in total inches </p>
         <select onchange="calculate()" id="height">
-          <option>4'7" and under</option>
-          <option>4'8"-5'2"</option>
-          <option>5'3"-5'9"</option>
-          <option>5'10"-6'0"</option>
-          <option>6'.1" and up</option>
+          <option value="0">4'7" and under</option>
+          <option value="0">4'8"-5'2"</option>
+          <option value="0">5'3"-5'9"</option>
+          <option value="0">5'10"-6'0"</option>
+          <option value="0">6'.1" and up</option>
         </select>
       </div>
       <label>Weight</label>
       <p> Enter weight in total pounds </p>
       <select onchange="calculate()" id="weight">
-        <option>0-75</option>
-        <option>75-100</option>
-        <option>100-125</option>
-        <option>125-150</option>
-        <option>150-175</option>
-        <option>175-200</option>
-        <option>200 and up</option>
+        <option value="0">0-75</option>
+        <option value="0">75-100</option>
+        <option value="0">100-125</option>
+        <option value="0">125-150</option>
+        <option value="0"> 150-175</option>
+        <option value="0">175-200</option>
+        <option value="0">200 and up</option>
       </select>
     
       <div class="w3-section">
         <label>Blood Pressure</label>
         <p> Enter normal, elevated, stage 1, stage 2, or crisis </p>
         <select onchange="calculate()" id="blood">
-          <option>normal</option>
-          <option>elevated</option>
-          <option>stage 1</option>
-          <option>stage 2</option>
-          <option>crisis</option>
+          <option value="1">normal</option> 
+          <option value="0">elevated</option>
+          <option value="0">stage 1</option>
+          <option value="0">stage 2</option>
+          <option value="0">crisis</option>
         </select>
       </div>
       <div class="w3-section">
@@ -127,14 +127,15 @@ label {
         <p> Enter diabetes, cancer or Alzhiemers </p>
     
         <select onchange="calculate()" id="family">
-          <option>none</option>
-          <option>diabetes</option>
-          <option>cancer</option>
-          <option>Alzhiemers</option>
+          <option value="0">none</option>
+          <option value="0">diabetes</option>
+          <option value="0">cancer</option>
+          <option value="0">Alzhiemers</option>
         </select>
       </div>
       <div class = "box">
         <p3>This is where your results will be!.</p3>
+        <input id="sum" disabled></input><br /><br /><br />
         </div>
 
       <button type="submit" onclick="calculate()" class="w3-button w3-block w3-dark-grey">Calculate</button>
@@ -152,19 +153,19 @@ label {
     <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
 
   </div>
-</form>
+
 </div>
 <script>
 
 	async function calculate() {
-		const age = document.getElementById("age").value
-		const height = document.getElementById("hieght").value
-    const weight = document.getElementById("weight").value
-    const blood = document.getElementById("blood").value
-    const family = document.getElementById("family").value
+		const age = document.getElementById("age").value;
+		const height = document.getElementById("height").value;
+    const weight = document.getElementById("weight").value;
+    const blood = document.getElementById("blood").value;
+    const family = document.getElementById("family").value;
 
 		// Note the URL (fetch) string will look something like '/add-two-integers?x=2&y=1' when it is sent.
-		const fetchString = "/calculate?age="+age+"height="+height+"weight="+weight+"blood="+blood+"family="+family
+		const fetchString = "/calculate?age="+age+"&height="+height+"&weight="+weight+"&blood="+blood+"&family="+family
 		const response = await fetch(fetchString)
 		const responseText = await response.text()
 		document.getElementById("sum").value = responseText
