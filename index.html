@@ -82,6 +82,7 @@ label {
         <label>Age</label>
         <p> Enter your age in years</p>
         <select onchange="calculate()" id="age">
+          <!-- example of values correctly changed-->
           <option value="0">1-29</option>
           <option value="10">30-44</option>
           <option value="20">45-60</option>s
@@ -92,6 +93,8 @@ label {
         <label>Height</label>
         <p> Enter height in total inches </p>
         <select onchange="calculate()" id="height">
+          <!-- these values for height and weight can be special because you-->
+          <!-- need to do a calulation with both of them-->
           <option value="0">4'7" and under</option>
           <option value="0">4'8"-5'2"</option>
           <option value="0">5'3"-5'9"</option>
@@ -113,6 +116,7 @@ label {
     
       <div class="w3-section">
         <label>Blood Pressure</label>
+        <!-- change values from here on based on assignment-->
         <p> Enter normal, elevated, stage 1, stage 2, or crisis </p>
         <select onchange="calculate()" id="blood">
           <option value="1">normal</option> 
@@ -158,6 +162,8 @@ label {
 <script>
 
 	async function calculate() {
+   //LEAVE THIS COMPLETELY ALONE PLZZZ
+   //this part was difficult lol and i got lucky
 		const age = document.getElementById("age").value;
 		const height = document.getElementById("height").value;
     const weight = document.getElementById("weight").value;
