@@ -137,7 +137,7 @@ label {
         <p3>This is where your results will be!.</p3>
         </div>
 
-      <button type="submit" class="w3-button w3-block w3-dark-grey">Calculate</button>
+      <button type="submit" onclick="calculate()" class="w3-button w3-block w3-dark-grey">Calculate</button>
       <p>
 
       </p>
@@ -164,7 +164,7 @@ label {
     const family = document.getElementById("family").value
 
 		// Note the URL (fetch) string will look something like '/add-two-integers?x=2&y=1' when it is sent.
-		const fetchString = "/add-two-integers?age="+age+"height="+height+"weight="+weight+"blood="+blood+"family="+family
+		const fetchString = "/calculate?age="+age+"height="+height+"weight="+weight+"blood="+blood+"family="+family
 		const response = await fetch(fetchString)
 		const responseText = await response.text()
 		document.getElementById("sum").value = responseText
