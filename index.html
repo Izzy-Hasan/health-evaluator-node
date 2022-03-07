@@ -22,21 +22,40 @@ p3{
 }
 
 .box {
-  width: 800px;
+  width: 825px;
+  border: 15px solid black;
+  padding: 50px;
+  margin: 20px;
+}
+
+.box1 {
+  width: 625px;
   border: 15px solid black;
   padding: 50px;
   margin: 20px;
 }
 label {
   font-size: 22px;
+  color: blue;
 }
+
+header {
+  font-size: 25px;
+  color: blue;
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+}
+
 </style>
-<head>
+
 <title>Health Risk Calculator</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-</head>
+
 <body>
 
 <!-- Picture with text -->
@@ -65,7 +84,7 @@ label {
 
 <!-- Input box from W3 Schools tutorial-->
   <!--This is where the information will be put in-->
-  <div class="w3-light-grey w3-padding-large w3-padding-32 w3-margin-top" id="contact">
+  <div class="w3-light-grey w3-padding-large w3-padding-32 w3-margin-top" id="contact" >
     <h3 class="w3-center">Health Risk Calculator</h3>
     <hr>
     <p>This program helps you classify health insurance
@@ -77,65 +96,90 @@ label {
         to get your insurance risk.</p>
 
     
-          
+      <div class = "center">
       <div class="w3-section">
         <label>Age</label>
         <p> Enter your age in years</p>
         <select onchange="calculate()" id="age">
+          <!-- example of values correctly changed-->
           <option value="0">1-29</option>
           <option value="10">30-44</option>
-          <option value="20">45-60</option>s
+          <option value="20">45-60</option>
           <option value="30">else</option>
         </select>
       </div>
+
      <div class="w3-section">
         <label>Height</label>
         <p> Enter height in total inches </p>
         <select onchange="calculate()" id="height">
-          <option value="0">4'7" and under</option>
-          <option value="0">4'8"-5'2"</option>
-          <option value="0">5'3"-5'9"</option>
-          <option value="0">5'10"-6'0"</option>
-          <option value="0">6'.1" and up</option>
+          <!-- these values for height and weight can be special because you-->
+          <!-- need to do a calulation with both of them-->
+          <option value="1">5'0" and under</option>
+          <option value="2">5'1"-5'4"</option>
+          <option value="3">5'5"-5'8"</option>
+          <option value="4">5'9"-5'11"</option>
+          <option value="5">6'0" and up</option>
         </select>
       </div>
+
+
+      <div class="w3-section">
       <label>Weight</label>
       <p> Enter weight in total pounds </p>
       <select onchange="calculate()" id="weight">
-        <option value="0">0-75</option>
-        <option value="0">75-100</option>
-        <option value="0">100-125</option>
-        <option value="0">125-150</option>
-        <option value="0"> 150-175</option>
-        <option value="0">175-200</option>
-        <option value="0">200 and up</option>
+        <option value="1">0-100</option>
+        <option value="2">100-125</option>
+        <option value="3">125-150</option>
+        <option value="4">150-175</option>
+        <option value="5"> 175-200</option>
+        <option value="6">200 and up</option>
       </select>
-    
+    </div>
+
       <div class="w3-section">
         <label>Blood Pressure</label>
+        <!-- change values from here on based on assignment-->
         <p> Enter normal, elevated, stage 1, stage 2, or crisis </p>
         <select onchange="calculate()" id="blood">
-          <option value="1">normal</option> 
-          <option value="0">elevated</option>
-          <option value="0">stage 1</option>
-          <option value="0">stage 2</option>
-          <option value="0">crisis</option>
+          <option value="0">normal</option> 
+          <option value="15">elevated</option>
+          <option value="30">stage 1</option>
+          <option value="75">stage 2</option>
+          <option value="100">crisis</option>
         </select>
       </div>
+
+
       <div class="w3-section">
         <label>Family Diease</label>
         <p> Enter diabetes, cancer or Alzhiemers </p>
     
         <select onchange="calculate()" id="family">
           <option value="0">none</option>
-          <option value="0">diabetes</option>
-          <option value="0">cancer</option>
-          <option value="0">Alzhiemers</option>
+          <option value="10">diabetes</option>
+          <option value="10">cancer</option>
+          <option value="10">Alzhiemers</option>
         </select>
       </div>
+      
+      <div class="w3-section">
+        
+        <label>Feedback</label>
+        <p> Did you like this calculator? </p>
+    <!-- this is here because family was not registering so this fixes it, why, who knows-->
+        <select onchange="calculate()" id="quiz">
+          <option value="0">yes</option>
+          <option value="0">no</option>
+
+        </select>
+      </div>
+
       <div class = "box">
-        <p3>This is where your results will be!.</p3>
-        <input id="sum" disabled></input><br /><br /><br />
+        <header>Results</header>
+        <div class = "box1">
+        <input id="sum" size= 50 disabled>
+        </div>
         </div>
 
       <button type="submit" onclick="calculate()" class="w3-button w3-block w3-dark-grey">Calculate</button>
@@ -147,17 +191,19 @@ label {
 
       </p>
 
-        
-     
-    </form><br>
+    </div> 
+
+  </div>
+  
     <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
 
   </div>
 
-</div>
 <script>
 
 	async function calculate() {
+   //LEAVE THIS COMPLETELY ALONE PLZZZ
+   //this part was difficult lol and i got lucky
 		const age = document.getElementById("age").value;
 		const height = document.getElementById("height").value;
     const weight = document.getElementById("weight").value;
