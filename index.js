@@ -190,7 +190,24 @@ app.get('/calculate', (request, response) => {
 	response.send(risk.toString())
 })
 
+app.get('/reset', (request, response) => {
+	console.log('Calling "/reset" on the Node.js server.')
+	var inputs = url.parse(request.url, true).query
+	//everything up here  ^ leave it be
 
+	//these are the ints of the values that we assigned them in the html page
+	//also leave these alone, but you need to use them
+	let age = parseInt(inputs.age)
+	let height = parseInt(inputs.height)
+    let weight = parseInt(inputs.weight)
+    let blood = parseInt(inputs.blood)
+  	let family = parseInt(inputs.family)
+	let bmi = "";
+	let sum = 0;
+	console.log("reset ran")
+	response.type('text/plain')
+	response.send(bmi.toString())
+})
 app.use('/', router);
 app.listen(process.env.port || 3000);
 
