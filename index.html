@@ -186,7 +186,7 @@ header {
       <p>
 
       </p>
-      <button type="reset" class="w3-button w3-block w3-dark-grey">Reset</button>
+      <button type="reset" onclick="reset()" class="w3-button w3-block w3-dark-grey">Reset</button>
       <p>
 
       </p>
@@ -217,6 +217,20 @@ header {
 		document.getElementById("sum").value = responseText
 	}
 
+	async function reset() {
+//this just sets everything to zero or nothing yayy
+		const age = document.getElementById("age").value;
+		const height = document.getElementById("height").value;
+    const weight = document.getElementById("weight").value;
+    const blood = document.getElementById("blood").value;
+    const family = document.getElementById("family").value;
+
+		// Note the URL (fetch) string will look something like '/add-two-integers?x=2&y=1' when it is sent.
+		const fetchString = "/reset?age="+age+"&height="+height+"&weight="+weight+"&blood="+blood+"&family="+family
+		const response = await fetch(fetchString)
+		const responseText = await response.text()
+		document.getElementById("sum").value = responseText
+	}
 
 </script>
 </body>
