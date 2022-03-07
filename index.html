@@ -48,7 +48,14 @@ header {
 .center {
   text-align: center;
 }
-
+.field{
+color: aliceblue;
+}
+@media screen and (max-width: 800px) {
+  .box, .box1, .field  {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
 </style>
 
 <title>Health Risk Calculator</title>
@@ -178,7 +185,9 @@ header {
       <div class = "box">
         <header>Results</header>
         <div class = "box1">
-        <input id="sum" size= 50 disabled>
+          <div class="field">
+        <input id="sum" size= 50 disabled class="field">
+      </div>
         </div>
         </div>
 
@@ -231,6 +240,7 @@ header {
 		const responseText = await response.text()
 		document.getElementById("sum").value = responseText
 	}
+
 
 </script>
 </body>
